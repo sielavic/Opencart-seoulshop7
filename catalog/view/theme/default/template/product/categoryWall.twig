@@ -1,0 +1,96 @@
+{{ header }}
+<style>
+	.category-row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.category-layout {
+		margin: 0 15px 15px;
+		text-align: center;
+		width: calc(100% / {{ qtyInRow }} - 30px);
+		min-width: {{ min_width }}px;
+	}
+	.category-layout:last-child::after {
+		content: '';
+		flex-grow: 1;
+	}	
+	.category-layout .category-block {
+		border: 1px solid #fff;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.category-layout:hover .category-block {
+		border: 1px solid #eee;
+	}
+	.category-layout .image {
+		margin-bottom: 8px;
+	}
+	.category-layout .caption {
+		margin-bottom: 10px;
+	}
+	@media screen and (max-width: 768px) {
+	.category-row {
+		justify-content: center;
+		}		
+	}
+</style>		
+<div id="CategoryWall" class="container">
+	<ul class="breadcrumb">
+	{% for breadcrumb in breadcrumbs %}
+	<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+	{% endfor %}
+	</ul>
+	<div class="row">{{ column_left }}
+	{% if column_left and column_right %}
+	{% set class = 'col-sm-6' %}
+	{% elseif column_left or column_right %}
+	{% set class = 'col-sm-9' %}
+	{% else %}
+	{% set class = 'col-sm-12' %}
+	{% endif %}
+	<div id="content" class="{{ class }}">{{ content_top }}
+		<h2>{{ title }}</h2>
+		{% if description %}
+		<div class="row">
+			<div class="col-sm-12">{{ description }}</div>
+		</div>
+		{% endif %}
+ 
+		{% if categories %}
+		<div class="row">
+			<div class="category-row"> 
+				{% for category in categories %}
+				<div class="category-layout category-list">					
+					<div class="category-block">
+						{% if category.image %}
+						<div class="image">
+							<a href="{{ category.href }}"><img src="{{ category.image }}" alt="{{ category.name }}" title="{{ category.name }}" class="img-responsive" /></a>
+						</div>
+						{% endif %}
+						<div class="caption">
+							<h4><a href="{{ category.href }}">{{ category.name }}</a></h4>
+							<p>{{ category.description }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %} 
+			</div>
+		</div>			
+		{% endif %}
+
+		{% if not categories and not categorys %}
+		<p>{{ text_empty }}</p>
+		<div class="buttons">
+		<div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
+		</div>
+		{% endif %}
+		{{ content_bottom }}
+	</div>
+	{{ column_right }}
+	</div>
+</div>
+{{ footer }}
+
+
+

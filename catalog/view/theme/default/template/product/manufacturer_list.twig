@@ -1,4 +1,5 @@
 {{ header }}
+
 <div id="product-manufacturer" class="container">
   <ul class="breadcrumb">
     {% for breadcrumb in breadcrumbs %}
@@ -14,6 +15,7 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
+    <br/>
       <h1>{{ heading_title }}</h1>
       {% if categories %}
       <p><strong>{{ text_index }}</strong> {% for category in categories %}

@@ -55,4 +55,14 @@
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
+<script>
+$("a").click(function() {
+    $link = $(this).attr("href");
+    $("body").fadeOut(400);
+    setTimeout(function(){
+        window.location.replace($link);
+    },400);
+    return false;
+});
+</script>
 {{ footer }}

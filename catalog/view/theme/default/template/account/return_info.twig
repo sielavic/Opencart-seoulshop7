@@ -14,6 +14,7 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
+     <br>
       <h1>{{ heading_title }}</h1>
       <table class="table table-bordered table-hover">
         <thead>
@@ -119,4 +120,15 @@
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
+
+<script>
+$("a").click(function() {
+    $link = $(this).attr("href");
+    $("body").fadeOut(400);
+    setTimeout(function(){
+        window.location.replace($link);
+    },400);
+    return false;
+});
+</script>
 {{ footer }} 

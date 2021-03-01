@@ -12,6 +12,8 @@
 /* OpenCart Code */
 .swiper-container {
 	direction: ltr !important;
+    
+    margin: 0 150px;
 }
 .swiper-pager {
 	width: 100%;
@@ -19,6 +21,10 @@
 	top: 50%;
 	line-height: 45px;
 }
+
+
+
+
 .swiper-button-prev, .swiper-button-next {
 	color: rgba(0, 0, 0, 0.8);
 	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
@@ -35,8 +41,18 @@
 	right: 10px;
 	
 }
+
+
+@media (max-width: 768px){
+ .swiper-container  {
+    margin: 0 5px;
+}
+}
+
 /* Desktop */
 @media (min-width: 768px){
+ 
+    
 .swiper-viewport .swiper-button-prev {
 	opacity: 0;
 	left: -20px;

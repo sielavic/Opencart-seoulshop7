@@ -64,4 +64,15 @@ $('input[name=\'product\']').autocomplete({
 	}
 });
 //--></script>
+
+<script>
+$("a").click(function() {
+    $link = $(this).attr("href");
+    $("body").fadeOut(400);
+    setTimeout(function(){
+        window.location.replace($link);
+    },400);
+    return false;
+});
+</script>
 {{ footer }}

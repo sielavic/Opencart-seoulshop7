@@ -28,6 +28,7 @@
   height: 100%;
   left: 0;
   top: 0;
+  background-color: white;
   padding: 0 8px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -143,7 +144,7 @@ button::-moz-focus-inner {
   color: #333333; }
 
 .mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
-  color: white;
+  color: black;
   right: -6px;
   text-align: right;
   padding-right: 6px;
@@ -278,7 +279,7 @@ img.mfp-img {
 .mfp-title {
   text-align: left;
   line-height: 18px;
-  color: #f3f3f3;
+  color: white;
   word-wrap: break-word;
   padding-right: 36px; }
 

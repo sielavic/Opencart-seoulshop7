@@ -14,7 +14,7 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
-      <h2>{{ heading_title }}</h2>
+      
       {% if thumb or description %}
       <div class="row"> {% if thumb %}
         <div class="col-sm-2"><img src="{{ thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-thumbnail" /></div>
@@ -167,4 +167,21 @@
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
+
+<script>
+$("a").click(function() {
+    $link = $(this).attr("href");
+    $("body").fadeOut(400);
+    setTimeout(function(){
+        window.location.replace($link);
+    },400);
+    return false;
+});
+</script>
+
+
 {{ footer }} 
+
+
+
+

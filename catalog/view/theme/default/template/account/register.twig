@@ -17,7 +17,8 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
-      <h1>{{ heading_title }}</h1>
+     <br>
+      <h1 >{{ heading_title }}</h1>
       <p>{{ text_account_already }}</p>
       <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset id="account">
@@ -416,4 +417,17 @@ $('.datetime').datetimepicker({
 	pickTime: true
 });
 //--></script> 
+
+
+<script>
+$("a").click(function() {
+    $link = $(this).attr("href");
+    $("body").fadeOut(400);
+    setTimeout(function(){
+        window.location.replace($link);
+    },400);
+    return false;
+});
+</script>
+
 {{ footer }} 
